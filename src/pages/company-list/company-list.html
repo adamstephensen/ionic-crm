@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Company List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let company of companies">
+    <ion-card-header>{{company.name}}</ion-card-header>
+    <ion-card-content>
+      <div>Email: {{company.email}}</div>
+      <div>Phone: {{company.phone}}</div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
