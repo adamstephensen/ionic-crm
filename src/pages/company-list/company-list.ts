@@ -29,4 +29,8 @@ export class CompanyListPage {
     this.navCtrl.push('CompanyDetailPage',{company:company});
   }
 
+  deleteCompany(company:any){
+    console.log(this.companies.indexOf(company));
+    this.companies.splice(this.companies.indexOf(company),1);
+  }
 }

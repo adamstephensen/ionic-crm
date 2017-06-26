@@ -1,27 +1,22 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Company List</ion-title>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
 <ion-list>
   <ion-item-sliding #item *ngFor="let company of companies" >
-    <ion-item>
+    <ion-item (click)="gotoCompanyDetail(company)">
       {{company.name}}
     </ion-item>
-    <ion-item-options side="left">
-      <button ion-button (click)="gotoCompanyDetail(company)">Details</button>
-      <button ion-button color="secondary" (click)="gotoCompanyDetail(company)">Share</button>
-    </ion-item-options>
-
-    <ion-item-options side="right">
-      <button ion-button color="danger" (click)="gotoCompanyDetail(company)">Delete</button>
+    <ion-item-options >
+      <button ion-button color="danger" (click)="deleteCompany(company)">Delete</button>
     </ion-item-options>
   </ion-item-sliding>
 </ion-list>
-
- 
 
 </ion-content>
