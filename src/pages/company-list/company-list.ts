@@ -24,4 +24,9 @@ export class CompanyListPage {
     ];
   }
 
+  gotoCompanyDetail(company: any) {
+    console.log('gotocmompany');
+    this.navCtrl.push('CompanyDetailPage',{company:company});
+  }
+
 }

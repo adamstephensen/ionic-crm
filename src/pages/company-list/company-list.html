@@ -6,12 +6,22 @@
 
 
 <ion-content padding>
-  <ion-card *ngFor="let company of companies">
-    <ion-card-header>{{company.name}}</ion-card-header>
-    <ion-card-content>
-      <div>Email: {{company.email}}</div>
-      <div>Phone: {{company.phone}}</div>
-    </ion-card-content>
-  </ion-card>
+<ion-list>
+  <ion-item-sliding #item *ngFor="let company of companies" >
+    <ion-item>
+      {{company.name}}
+    </ion-item>
+    <ion-item-options side="left">
+      <button ion-button (click)="gotoCompanyDetail(company)">Details</button>
+      <button ion-button color="secondary" (click)="gotoCompanyDetail(company)">Share</button>
+    </ion-item-options>
+
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="gotoCompanyDetail(company)">Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+ 
 
 </ion-content>
