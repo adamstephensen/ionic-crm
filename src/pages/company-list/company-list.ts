@@ -9,6 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CompanyListPage {
   companies: Company[]
+  searchText: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -23,14 +24,16 @@ export class CompanyListPage {
       { name: 'SSW', email: 'adam@ssw.com.au', phone: 1114234 }
     ];
   }
-
+  searchCompanies() {
+    this.companies = this.companies.filter(item => item.name.startsWith(this.searchText));
+  }
   gotoCompanyDetail(company: any) {
     console.log('gotocmompany');
-    this.navCtrl.push('CompanyDetailPage',{company:company});
+    this.navCtrl.push('CompanyDetailPage', { company: company });
   }
 
-  deleteCompany(company:any){
+  deleteCompany(company: any) {
     console.log(this.companies.indexOf(company));
-    this.companies.splice(this.companies.indexOf(company),1);
+    this.companies.splice(this.companies.indexOf(company), 1);
   }
 }

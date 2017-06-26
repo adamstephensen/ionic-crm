@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-searchbar [(ngModel)]="searchText" (ionInput)="searchCompanies($event)" ></ion-searchbar>
 <ion-list>
   <ion-item-sliding #item *ngFor="let company of companies" >
     <ion-item (click)="gotoCompanyDetail(company)">
